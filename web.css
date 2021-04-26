@@ -1,0 +1,48 @@
+.head{
+    font-family: 'Sarabun', sans-serif;
+    font-size: 80px;
+    color: #f6e6e4;
+}
+#headbox {
+        border-radius: 200px;
+        background: #ffbe0f;
+        padding: 20px; 
+        height: 150px;    
+}
+#cal {
+    float: left;   
+}
+#col-top {
+    margin-left: 250px;
+}
+p {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 20px;
+    color: #f6e6e4  ;
+}
+#cal2 {
+    float: left;
+}
+p:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  p:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  p:hover {
+    color: #874b4b;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  p:active {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
