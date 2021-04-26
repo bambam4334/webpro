@@ -34,20 +34,22 @@
     text-align: center;
     margin-left: -150px;
     margin-top: 150px;
+    background-color: yellow;
   }
 
   #regis {
-    margin-top: -80px;
+    margin-top: -350px;
     font-family: 'Kanit', sans-serif;
     color: rgb(207, 182, 182);
     font-size: 50px;
-    position: absolute;
-    margin-left: 850px;
+    position: relative;
+    margin-left: 500px;
   }
 
   #logo {
-    margin-left: 250px;
-    margin-top: -1050px;
+    margin-left: 350px;
+    margin-top: -750px;
+    position: relative;
   }
 
   a:link {
@@ -77,46 +79,69 @@
   #web {
     position: absolute;
     font-family: 'Kanit', sans-serif;
-    max-width: 100%;
-    width: 50%;
+    width: 100%;
     height: auto;
     height: max-content;
     margin-top: 20px;
     color: rgb(255, 255, 255);
+    margin-left: 200px;
+
   }
 
-  .web {
+  /* .web {
     margin-left: -120px;
     font-family: 'Kanit', sans-serif;
-  }
+  } */
 </style>
-
 <body>
-  <div id="video-container">
-    <video autoplay="autoplay" playsinline autoplay loop muted>
-      <source src="/video/video2.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div id="overlay" class="column is-12-desktop">
-    <!-- ตัดต่อ3K admission ใน pS -->
-    <div id="logo">
-      <img src="pic/logoreal.png">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="web.html">
+        <img src="/pic/minilogo2.png" width="80" height="1000">
+      </a>
     </div>
-    <div id="regis">
-      <a href="register.html"><b>สมัครสมาชิก </b></a>
-      <t style="color: white;"><b>|</b></t>
-      <a href="login.html"><b> เข้าสู่ระบบ</b></a>
-      <div class="web">
-        <a href="web.html"><button class="button is-warning">เข้าสู่เว็บไซต์</button></a>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary is-static">
+              <!-- ถ้าล็อกอินจะมีชื่อ -->
+              <strong>Not Login</strong>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="section">
+    <div class="columns is-mobile is-multiline is-variable is-1">
+
+      <div class="column is-12-desktop">
+        <div id="video-container">
+          <video autoplay="autoplay" playsinline autoplay loop muted>
+            <source src="/video/video2.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
 
+      <!-- ตัดต่อ3K admission ใน pS -->
+      <div id="logo">
+        <img src="pic/logoreal.png">
+      </div>
+      <div id="regis" >
+        <a href="register.html"><b>สมัครสมาชิก </b></a>
+        <t style="color: white;"><b>|</b></t>
+        <a href="login.html"><b> เข้าสู่ระบบ</b></a>
+        <div id="web">
+          <a href="web.html"><button style="font-family: 'Kanit', sans-serif; color: #874b4b;"
+              class="button is-warning">เข้าสู่เว็บไซต์</button></a>
+        </div>
+      </div>
     </div>
-
   </div>
 
 
-  </div>
+
 
 </body>
 <script>
