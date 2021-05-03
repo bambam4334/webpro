@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" href="editadmin.css">
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-color: salmon;">
+    <div id="app">
+
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <img src="/pic/minilogo2.png" width="80" height="1000">
+                </a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item mx-4" style="background-color:palegoldenrod;" height="1000">
+                    <div>
+                        <o id="status">
+                            <!-- ถ้าล็อกอินจะมีชื่อ จะทำไดมั้ยทำได้รึเป่า T^T-->
+                            <strong>Not Login</strong>
+                            <br>
+                        </o>
+                    </div>
+                </div>
+            </div>
+        </nav>
+   
+
+    <center>
+        <div class="columns is-12-desktop">
+            <div class="column  my-6" style="font-size: 35px; color: wheat;">
+                แก้ไขข้อมูลในระบบ
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="field has-addons">
+                <div class="control" style="width: 100%;">
+                    <input class="input is-fullwidth" type="text" placeholder="ใส่ชื่อคณะที่ต้องการแก้ไข">
+                </div>
+                
+            </div>
+            <div class="field has-addons">
+                <div class="control" style="width: 100%;">
+                    <div class="select is-fullwidth">
+                        <select name="university">
+                            <option value="KMITL">KMITL</option>
+                            <option value="KMUTT">KMUTT</option>
+                            <option value="KMUTNB">KMUTNB</option>
+                        </select>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="control">
+                <button type="submit" style="font-family: 'Sarabun', sans-serif;" @click="searchfn()" class="button is-warning">ค้นหา</button>
+            </div>
+        </div>
+    </center>
+    <br>
+    <br>
+    <!-- ใส่ v-if ครอบ -->
+    <div class="columns mx-5">
+        <div class="column is-half" v-if="search === true">
+            <br>
+            <fieldset disabled>
+
+                <div class="field">
+                    <label class="label" style=" font-size: 15px; ">ชื่อหลักสูตร</label>
+                    <div class="control">
+                        <input class="input" type="text" style="width: 70%;" placeholder="คณะเทคโนโลยีสารสนเทศ">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" style=" font-size: 15x;">คะแนนสูงสุด</label>
+                    <div class="control">
+                        <input class="input" type="number" style="width: 70%;" placeholder="15000">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" style=" font-size: 15x;">คะแนนต่ำสุด</label>
+                    <div class="control">
+                        <input class="input" type="number"  style="width: 70%;" placeholder="8000">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" style=" font-size: 15x;">อัตราการแข่งขัน</label>
+                    <div class="control">
+                        <input class="input" type="number"  style="width: 70%;" placeholder="10.5">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" style=" font-size: 15x;">จำนวนนักศึกษาที่รับเข้าหลักสูตร</label>
+                    <div class="control">
+                        <input class="input" type="number" style="width: 70%;" placeholder="5">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" style=" font-size: 15x;">ผลต่างคะแนนสูงสุด-ต่ำสุด</label>
+                    <div class="control">
+                        <input class="input" type="num" style="width: 70%;" placeholder="5786.3">
+                    </div>
+                </div>
+
+            </fieldset>
+            <br>
+        
+        </div>
+       
+        <div class="column is-half" v-if="search === true">
+                <p style="font-size: 20px; color: red;"><b>***กรุณากรอกข้อมูลที่ต้องการแก้ไข***</b></p>
+                <div class="field">
+                    <label class="label" style=" font-size: 15px;">ชื่อหลักสูตร</label>
+                    <div class="control">
+                        <input class="input" type="text" style="width: 70%;" placeholder="คณะเทคโนโลยีสารสนเทศ">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" style=" font-size: 15x;">คะแนนสูงสุด</label>
+                    <div class="control">
+                        <input class="input" type="number" style="width: 70%;" placeholder="15000">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" style=" font-size: 15x;">คะแนนต่ำสุด</label>
+                    <div class="control">
+                        <input class="input" type="number"style="width: 70%;" placeholder="8000">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" style=" font-size: 15x;">อัตราการแข่งขัน</label>
+                    <div class="control">
+                        <input class="input" type="number" style="width: 70%;" placeholder="10.5">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" style=" font-size: 15x;">จำนวนนักศึกษาที่รับเข้าหลักสูตร</label>
+                    <div class="control">
+                        <input class="input" type="number" style="width: 70%;" placeholder="5">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" style=" font-size: 15x;">ผลต่างคะแนนสูงสุด-ต่ำสุด</label>
+                    <div class="control">
+                        <input class="input" type="num" style="width: 70%;" placeholder="5786.3">
+                    </div>
+                    <br>
+                    <button class="button is-warning">Submit</button>
+                    <button class="button  is-warning is-light" onclick="cancel()">Cancel</button>
+                </div>
+                    
+                
+        </div>
+    </div>
+    
+    </div>
+    <script>
+     var app = new Vue({
+  el: '#app',
+  data: {
+   edit: false,
+   show : false,
+   modal : false,
+   search: false
+  },
+  methods : {
+    searchfn()
+    {
+        this.search = true
+        if(this.search)
+        {
+            return this.search = true
+        }
+        else{}
+        this.search = false
+    }
+  }
+ 
+})
+
+function cancel()
+{
+var r = confirm("ข้อมูลของคุณจะไม่ถูกบันทึก");
+if (r == true) {
+    window.location='webadmin.html';
+} else {
+    
+}
+}
+
+
+    </script>
+</body>
+</html>
